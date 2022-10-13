@@ -1,38 +1,35 @@
 class Carrera {
   Pista pista;
-  Auto principal;
-  Auto contrincantes;
+  Auto AutoPrincipal;
+  AutoContrincante Auto_Enemigo;
   int posx=100;
   int posy=-100;
-  int posy2;
   int alto=100;
   int ancho=100;
   int lado;
   float colison;
-  boolean afirmativoo;
   Carrera() {
-    principal = new Auto(posx, 450, alto, ancho);
+    AutoPrincipal = new Auto(posx, 450, alto, ancho);
     pista= new Pista();
   }
 
   void dibujar () {
+    AutoPrincipal.dibujar();
+    acciones();
+    pista.dibujar();
+  }
+
+  void acciones() {
     mover();
-    dibujarAuto();
     colision();
     cambioDeCarril();
-    pista.dibujarPista();
-    pista.dibujarCostado();
   }
-  void dibujarAuto() {
-    principal.dibujar();
-  }
-
   void mover() {
     Lado();
-    if (posy <height ) {
+    if (posy<height ) {
 
       posy=posy+5;
-      contrincantes.dibujar2();
+      Auto_Enemigo.dibujar();
       //println(posy);
       if (posy+alto>height) {
         Lado();
@@ -48,25 +45,25 @@ class Carrera {
     }
     if (lado==1) {
       //println("lo cree1");
-      contrincantes= new Auto(posx, posy, alto, ancho);
+      Auto_Enemigo= new AutoContrincante(posx, posy, alto, ancho);
     } else if (lado==2) {
       //println("lo cree2");
-      contrincantes= new Auto(posx+ancho, posy, alto, ancho);
+      Auto_Enemigo= new AutoContrincante(posx+ancho, posy, alto, ancho);
     }
   }
 
   void cambioDeCarril() {
     if (colison==0) {
       if (lado==1) {
-        principal.moverDerecha();
+        AutoPrincipal.moverDerecha();
       } else if ( lado==2) {
-        principal.moverIzquierda();
+        AutoPrincipal.moverIzquierda();
       }
     }
   }
 
   void colision() {
-    colison=dist(contrincantes.posX+ancho/2, contrincantes.posY+110, principal.posX+ancho/2, principal.posY);
+    colison=dist(Auto_Enemigo.posX+ancho/2, Auto_Enemigo.posY+110, AutoPrincipal.posX+ancho/2, AutoPrincipal.posY);
     //println("la colision es:"+colison);
   }
 }
