@@ -3,4 +3,7 @@ class Machete{
   Machete(){
     
   }
+  void dibujar(){
+  
+  }
 }

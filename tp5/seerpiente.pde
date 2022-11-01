@@ -6,4 +6,15 @@ class Serpiente{
   Serpiente(){
   
   }
+  void dibujar(){
+  
+  }
+  
+  void posSerpiente(){
+  
+  }
+  
+  void dibujarSerpiente(){
+    
+  }
 }
