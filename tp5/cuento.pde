@@ -1,7 +1,0 @@
-class aLaDeriva{
-  
-  aLaDeriva(){
-  
-  }
-  
-}
