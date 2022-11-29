@@ -2,7 +2,7 @@
 class Juego {
   Arbusto arbusto;
   Serpiente serpiente;
-  
+
   PImage machete;
   float x;
   int posYararaX;
@@ -16,35 +16,31 @@ class Juego {
     machete= loadImage("machete_0.png");
     serpiente= new Serpiente();
     arbusto= new Arbusto();
-    
   }
   void dibujar() {
     //imageMode(CORNER);
     image(fondo, 0, 0, 800, 600);
     serpiente.dibujar();
     posArbusto();
-    machete.resize(150, 300);
-    image(machete, mouseX, mouseY-20);
-
-    
+    image(machete, mouseX, mouseY-50,150,300);
+    println("mouseX:"+mouseX);
+    println("mouseY:"+mouseY);
     puntuacionEnPantalla();
   }
 
   void puntuacionEnPantalla() {
-    text("Puntos="+puntos,75,20);
-    text("Errados="+perdido,75,40);
+    text("Puntos="+puntos, 75, 20);
+    text("Errados="+perdido, 75, 40);
   }
   void matarYarara() {
-    fileEffect.play();
-    if (distancia()) {
+    if (serpiente.distancia()) {
       puntos++;
+      fileEffect.play();
     } else {
       perdido++;
     }
   }
-  boolean distancia() {
-    return mouseX > serpiente.posYararaX && mouseX< serpiente.posYararaX+100 && mouseY > serpiente.posYararaY && mouseY < serpiente.posYararaY+50;
-  }
+
 
   void posArbusto() {
     for (int i=0; i<2; i++) {
@@ -53,5 +49,4 @@ class Juego {
       }
     }
   }
-  
 }

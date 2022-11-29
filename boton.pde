@@ -1,6 +1,6 @@
-class Boton{
+class Boton {
   int bx, by, ancho, alto; // ubicacion y tamaño
-   // 
+  // 
   String texto;
   Boton(int bx, int by, int ancho, int alto) {
     this.bx = bx-50;
@@ -11,10 +11,10 @@ class Boton{
     textSize(alto/2);
   }
   void dibujarBoton(String texto) {
-    
+
     this.texto = texto;
     fill(0, 0, 255);
-    rect(bx, by, ancho, alto,10);
+    rect(bx, by, ancho, alto, 10);
     fill(255); 
     text(texto, bx+ancho/2, by+alto/2);
   }

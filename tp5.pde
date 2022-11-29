@@ -1,24 +1,24 @@
 /*
   Ariel Gaspar 
-  Legajo 85194/0
-  Profesor Leonardo Garay
-  Comision 4
-  https://www.youtube.com/watch?v=r_aZwhfHBWk
-*/
+ Legajo 85194/0
+ Profesor Leonardo Garay
+ Comision 4
+ https://www.youtube.com/watch?v=r_aZwhfHBWk
+ */
 import processing.sound.*;
 Principal principal;
 SoundFile fileEffect;
-void setup(){
-  size(800,600);
+void setup() {
+  size(800, 600);
   principal= new Principal();
   fileEffect = new SoundFile(this, "machete_sonido.mp3");
 }
 
-void draw(){
+void draw() {
   background(0);
   principal.dibujar();
 }
 
-void mousePressed(){
+void mousePressed() {
   principal.cambiarPantallaBoton();
 }

@@ -1,21 +1,20 @@
-class PantallaFinal{
+class PantallaFinal {
   String texto;
   Boton botonReiniciar;
-  int ancho=100,alto=40;
+  int ancho=100, alto=40;
   PFont fuente;
-  
-  PantallaFinal(){
-    fuente=createFont ("Comic-ink.ttf",1);
+  int x=width/2;
+  int y=height/2;
+  PantallaFinal() {
+    fuente=createFont ("Comic-ink.ttf", 1);
     textFont(fuente);
-    texto="fin";
-    botonReiniciar=new Boton(width/2,height/2,ancho,alto);
+    texto="fin \n Cuento: A la deriva \n Gracias por leer y jugar!";
+    botonReiniciar=new Boton(x, y, ancho, alto);
   }
-  
-  void dibujar(){
+
+  void dibujar() {
     textAlign(CENTER);
-    text(texto,width/2,100);
+    text(texto,x, 100);
     botonReiniciar.dibujarBoton("Reiniciar");
   }
-  
-  
 }
