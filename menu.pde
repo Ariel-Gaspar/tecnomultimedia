@@ -11,17 +11,16 @@ class Menu {
   int x=width/2, y=850, y2=height/2;
   Menu() {
     fondo= loadImage("fondo_menu.jpg");
+    botonAtras= new Boton(x, height-50, ancho, alto);
     botonEmpezar= new Boton(x-50, y2, ancho, alto);
     botonInstrucciones= new Boton (x-50, y2+alto*2, 200, alto);
     botonCreditos =new Boton(x-50, y2+alto*4, ancho, alto);
     
-    botonAtras= new Boton(x, y2+alto*4, ancho, alto);
+    
     textCredits="TP N°3 \n Alumno..........Gaspar Ariel \n Legajo..........85194/0 \n Cuento: A la deriva \n Gracias por leer y jugar!";
   }
 
   void dibujar() {
-    println("mouseX:"+mouseX);
-    println("mouseY:"+mouseY);
     image(fondo, 200, 0, 400, 600);
     botonEmpezar.dibujarBoton("EMPEZAR");
     botonInstrucciones.dibujarBoton("INSTRUCCIONES");
@@ -42,7 +41,7 @@ class Menu {
   }
 
   void pantallaInstrucciones() {
-
+    
     botonAtras.dibujarBoton("atras");
     push();
     textSize(15);

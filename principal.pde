@@ -30,7 +30,6 @@ class Principal {
     juego= new Juego();
   }
   void dibujar() {
-    println(juego.puntos);
     cambiarPantalla();
   }
   void cambiarPantalla() {
@@ -81,13 +80,13 @@ class Principal {
       }
     }
     if (pantallaActual==2) {
-      if (menu.botonAtras.botonPress(width/2, height/2+alto*4, ancho, alto)) {
+      if (menu.botonAtras.botonPress(width/2, height-50, ancho, alto)) {
         pantallaActual=0;
         menu.id=pantallaActual;
       }
     }
     if (pantallaActual==3) {
-      if (menu.botonAtras.botonPress(width/2, height/2+alto*4, ancho, alto)) {
+      if (menu.botonAtras.botonPress(width/2, height-50, ancho, alto)) {
         pantallaActual=0;
         menu.id=pantallaActual;
         menu.y=850;
