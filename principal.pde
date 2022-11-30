@@ -30,6 +30,7 @@ class Principal {
     juego= new Juego();
   }
   void dibujar() {
+    println(juego.puntos);
     cambiarPantalla();
   }
   void cambiarPantalla() {
@@ -94,8 +95,9 @@ class Principal {
     }
     if (pantallaActual==4) {
       juego.matarYarara();
-      if (juego.puntos==5) {
+      if (juego.puntos==5 || juego.puntos>5) {
         pantallaActual=1;
+        fileEffect.stop();
       } else if (juego.perdido==10) {
         pantallaActual=5;
       }

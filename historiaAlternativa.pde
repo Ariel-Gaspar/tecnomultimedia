@@ -10,8 +10,8 @@ class HistoriaAlternativa {
     fin= loadImage("FIN.jpg");
     imagenActual=imagen;
 
-    botonSiguiente=new Boton(x, y, ancho, alto);
-    botonReiniciar=new Boton(x, y, ancho, alto);
+    botonSiguiente=new Boton(x, height-50, ancho, alto);
+    botonReiniciar=new Boton(x, height-50, ancho, alto);
   }
 
   void dibujar() {

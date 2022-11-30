@@ -23,8 +23,7 @@ class Juego {
     serpiente.dibujar();
     posArbusto();
     image(machete, mouseX, mouseY-50,150,300);
-    println("mouseX:"+mouseX);
-    println("mouseY:"+mouseY);
+    
     puntuacionEnPantalla();
   }
 
